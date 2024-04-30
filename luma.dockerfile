@@ -69,6 +69,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 #COPY . .
 COPY pytest.ini /tests/pytest.ini
 COPY conftest.py /tests/conftest.py
+COPY ./data /tests/data
 COPY ./pages /tests/pages
 COPY ./tests /tests/tests
 

@@ -41,6 +41,7 @@ class NavigatorLocators:
     NAV_GEAR = '#ui-id-6'
     NAV_TRAINING = '#ui-id-7'
     NAV_SALE = '#ui-id-8'
+    NAV_MENU = '#ui-id-2'
 
 
 class SideBarLocators:
@@ -56,6 +57,7 @@ class BaseLocators:
     PAGE_TITLE = 'h1'
     BREADCRUMBS_LIST = ".breadcrumbs li"
     BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
+    PRIVACY_COOKIE_POLICY_LOCATOR = "//a[contains(@href, 'privacy-policy-cookie')]"
 
 
 class SearchTermsLocators:
@@ -64,9 +66,16 @@ class SearchTermsLocators:
     LIST_OF_SEARCH_TERMS = '[class="item"] a'
 
 
-class WomanPageLocators:
-    WOMAN_MENU = "//*[@id='ui-id-4']"
+class WomenPageLocators:
+    WOMEN_MENU = "//*[@id='ui-id-4']"
     TOPS_LINK = "//*[@id='ui-id-9']"
     TOPS_TITLE = ".page-title-wrapper"
     BOTTOMS_LINK = "//*[@id='ui-id-10']"
-    BOTTOMS_TITLE = ""
+    BOTTOMS_TITLE = ".ui-corner-all ui-state-focus"
+    DROPDOWN_BLOCK = "//*[@id='ui-id-2']/li[2]/ul"
+
+
+class WhatsNewPageLocators:
+    HEADER = 'h1>span'
+    LUMAS_LATEST_LIST = '.products-grid>ol'
+    LUMAS_LATEST_ITEMS = '.products-grid>ol>li'
