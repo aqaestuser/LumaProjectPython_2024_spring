@@ -4,3 +4,6 @@ class MainPageData:
 
 class PrivacyPolicyPageData:
     page_main_header = "Privacy Policy"
+
+class ShippingData:
+    shipping_address = "Shipping Address"

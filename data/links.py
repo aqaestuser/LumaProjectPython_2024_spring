@@ -6,3 +6,5 @@ WHATS_NEW_PAGE_LINK = 'https://magento.softwaretestingboard.com/what-is-new.html
 PRIVACY_POLICY_PAGE_LINK = 'https://magento.softwaretestingboard.com/privacy-policy-cookie-restriction-mode'
 CONTACT_US_LINK = "https://magento.softwaretestingboard.com/contact/"
 PRIVACY_POLICY_LINK = "https://magento.softwaretestingboard.com/privacy-policy-cookie-restriction-mode"
+HERO_HOODIE = "https://magento.softwaretestingboard.com/hero-hoodie.html"
+SHOPPING_CART = "https://magento.softwaretestingboard.com/checkout/cart/"
