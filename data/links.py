@@ -20,3 +20,4 @@ HERO_HOODIE = "https://magento.softwaretestingboard.com/hero-hoodie.html"
 SHOPPING_CART = "https://magento.softwaretestingboard.com/checkout/cart/"
 TRAINING_URL = 'https://magento.softwaretestingboard.com/training.html'
 VIDEO_DOWNLOAD_URL = 'https://magento.softwaretestingboard.com/training/training-video.html'
+ERIN_RECOMMENDS_URL = 'https://magento.softwaretestingboard.com/collections/erin-recommends.html'

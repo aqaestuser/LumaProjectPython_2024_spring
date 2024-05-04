@@ -52,3 +52,4 @@ def assert_view_and_edit_cart_blue_text_visibility():
 
 def move_to_cart():
     s(a).hover()
+
