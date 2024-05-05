@@ -1,10 +1,11 @@
 from selene import browser
 from selene.support.conditions import have, be
 from selene.support.shared.jquery_style import s, ss
-from pages.locators import WhatsNewPageLocators as WNL
-from data.links import WHATS_NEW_PAGE_LINK
 from selenium.webdriver.common.action_chains import ActionChains
+
+from data.links import WHATS_NEW_PAGE_LINK
 from pages.locators import ProductItemLocators as Product
+from pages.locators import WhatsNewPageLocators as WNL
 
 
 class WhatsNewPage:
@@ -24,7 +25,7 @@ class WhatsNewPage:
         return s(WNL.LUMAS_LATEST_LIST).should(be.present)
 
     def get_lumas_latest_items(self):
-        return s(WNL.LUMAS_LATEST_ITEMS)
+        return ss(WNL.LUMAS_LATEST_ITEMS)
 
     def check_current_url(self):
         return browser.driver.current_url
@@ -58,3 +59,22 @@ class WhatsNewPage:
         self.scroll_to(product)
         self.move_to(product)
         s(Product.WISH_LIST).click()
+
+    def get_number_of_lumas_latest(self):
+        collection = self.get_lumas_latest_items()
+        return len(collection)
+
+    @staticmethod
+    def get_collection_lumas_latest_items():
+        return ss(WNL.LUMAS_LATEST_IMAGES)
+
+    def are_men_and_women_items_present(self):
+        collection = self.get_collection_lumas_latest_items()
+        m = 0
+        w = 0
+        for item in collection:
+            if item.matching(have.attribute("src").value_containing('/m/')):
+                m += 1
+            elif item.matching(have.attribute("src").value_containing('/w/')):
+                w += 1
+        return True if (m > 0 and w > 0) and m + w == 4 else False
