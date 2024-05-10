@@ -20,6 +20,8 @@ CART_LINK = BASE_URL + '/checkout/cart/'
 YOGA_URL = BASE_URL + '/collections/yoga-new.html'
 MEN_SALE_PAGE_URL = BASE_URL + '/promotions/men-sale.html'
 YOGA_LIST_URL = BASE_URL + '/collections/yoga-new.html?product_list_mode=list'
+LINK_LOGIN = 'https://magento.softwaretestingboard.com/customer/account/login'
+LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
 
 
 class MenUrls:
