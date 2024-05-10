@@ -29,6 +29,14 @@ class ProductLocators:
     ARGUS_All_WEATHER_TANK_COLOR = '//*[@title="Argus All-Weather Tank"]/../..//*[@option-label="Gray"]'
     ARGUS_All_WEATHER_TANK_ADD_TO_CARD = '//*[@title="Argus All-Weather Tank"]/../..//*[@title="Add to Cart"]'
     MINI_BASKET_WINDOW = '[class="action showcart"]'
+    RADIANT_TEE_LINK = "//*[contains(text(), 'Radiant Tee')]"
+    RADIANT_TEE_IMG = 'img[alt="Radiant Tee"]'
+    RADIANT_TEE_TITLE = 'span[data-ui-id="page-title-wrapper"]'
+    RADIANT_TEE_PRICE = '#product-price-1556'
+    SIZE_XS = '#option-label-size-143-item-166'
+    COLOR_BLUE = '#option-label-color-93-item-50'
+    SHOULD_CHOOSE_SIZE_AND_COLOR = '.swatch-input super-attribute-select'
+    TEXT_REQUIRED_FIELD = 'This is a required field.'
 
 
 class HomeLocators:
@@ -37,7 +45,8 @@ class HomeLocators:
     STORE_LOGO = 'a.logo'
     CART_ICON = 'a.showcart'
     MINICART = '#ui-id-1'
-    MINICART_VIEW = 'a.viewcart'
+    MINICART_VIEW = '.action.viewcart'
+    MINICART_COUNTER = '.counter-label'
 
 
 class NavigatorLocators:
@@ -59,6 +68,7 @@ class NavigatorLocators:
     NAV_MEN_TOPS_SUBMENU_HREFS = ".nav-3-1 > ul  > li > a"
     NAV_MEN_BOTTOMS_SUBMENU_HREFS = ".nav-3-2 > ul  > li > a"
 
+
 class SideBarLocators:
     BREADCRUMBS = '.breadcrumbs'
     ITEM_HOME = '.item.home a'
@@ -74,6 +84,7 @@ class BaseLocators:
     PAGE_HEADER = "#page-title-heading"
     BREADCRUMBS_LIST = ".breadcrumbs li"
     BREADCRUMBS_LINKS = '.breadcrumbs > ul  > li > a'
+    BREADCRUMBS = ".breadcrumbs > ul"
     PRIVACY_COOKIE_POLICY_LOCATOR = "//a[contains(@href, 'privacy-policy-cookie')]"
     PRODUCT_ITEM_IN_CATALOG = 'li.product-item'  # каждый товар на любой странице в каталоге
     PRODUCT_PRICE = 'price-label'
@@ -86,6 +97,7 @@ class BaseLocators:
                 ]
     NEW_LUMA_YOGA_COLLECTION_BLOCK_LOCATOR = "//a[contains(@class,'home-main')]/span"
     NEW_LUMA_YOGA_COLLECTION_BLOCK_INFO_TEXT_LOCATOR = "//a[contains(@class,'home-main')]//span[@class='info']"
+
 
 class SearchTermsLocators:
     LINK_SEARCH_TERMS = "https://magento.softwaretestingboard.com/search/term/popular/"
@@ -100,6 +112,7 @@ class WomenPageLocators:
     BOTTOMS_LINK = "//*[@id='ui-id-10']"
     BOTTOMS_TITLE = ".ui-corner-all ui-state-focus"
     DROPDOWN_BLOCK = "//*[@id='ui-id-2']/li[2]/ul"
+    TEES_LINK = '//*[@id="ui-id-13"]'
 
 
 class WhatsNewPageLocators:
@@ -108,6 +121,7 @@ class WhatsNewPageLocators:
     LUMAS_LATEST_ITEMS = '.products-grid>ol>li'
     BUTTON_MORE = 'span.more.button'
     LUMAS_LATEST_IMAGES = '.product-image-photo'
+    NEW_YOGA_LINK = "//*[text()='New Luma Yoga Collection']"
 
 
 class PrivacyPolicyPageLocators:
@@ -158,6 +172,8 @@ class ErinRecommendLocators:
     FOOTER = "//footer[@class='page-footer']"
     PAGINATION_CONTROL = "//div[@class='pages']"
     PAGE_NEXT = "(//a[@title='Next'])[2]"
+    PAGE_DROPDOWN = "(//select[@data-role='limiter'])[2]"
+    PRODUCTS = browser.all(".product-item")
 
 
 class PerformanceSportswear:
@@ -175,6 +191,7 @@ class WishListLocators:
     SIZES = "div.swatch-attribute.size .swatch-option.text"
     UPDATED = "a.action.towishlist.updated"
 
+
 class ComparisonListLocators:
     WHATS_NEW_PAGE_URL = "https://magento.softwaretestingboard.com/what-is-new.html"
     COMPARISON_LIST_URL = "https://magento.softwaretestingboard.com/catalog/product_compare/"
@@ -185,3 +202,28 @@ class ComparisonListLocators:
     REMOVE_ITEM = "//*[@id='product-comparison']//a[class='action delete'])[1]"
     ITEM_NAME = "(/*[@id='product-comparison']//[@class='product-item-name'])[1]"
     EMPTY_MESSAGE = "//div[@class='message info empty']"
+
+    
+class CartLocators:
+    QTY = '.input-text.qty'
+    UPDATE_SHOPPING_CART_BUTTON = '.action.update'
+
+class TrainingPageLocators:
+    VIDEO_DOWNLOAD_LINK = '#narrow-by-list2 li a'
+    VIDEO_DOWNLOAD_TRAINING_TITLE = 'span[data-ui-id="page-title-wrapper"'
+
+class PerformanceSportswear:
+    LINK_SPORT = "https://magento.softwaretestingboard.com/collections/performance-new.html"
+    BUTTON_ADD_ITEM2 = '#maincontent li:nth-child(2) button'
+    SUCCESS_MESSAGE = '#maincontent > div.page.messages > div:nth-child(2) > div > div > div'
+    TEXT_SUCCESS_MESSAGE = 'You added Helios Endurance Tank to your shopping cart'
+    IMAGE_2 = '#maincontent ol > li:nth-child(2) .product-image-container'
+    ITEM_2_IN_GENERAL = 'li.product-item:nth-child(2)'
+
+    
+class YogaPageLocators:
+    PAGE_TITLE = '#page-title-heading > span'
+    LIST_BUTTON = '.modes-mode.mode-list'
+    WRAPPER_LIST_VIEW = '.products.wrapper.list'
+    GRID_BUTTON = '.modes-mode.mode-grid'
+    WRAPPER_GRID_VIEW = '.products.wrapper.grid'
