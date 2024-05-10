@@ -174,3 +174,14 @@ class WishListLocators:
     COLORS = "div.swatch-attribute.color .swatch-option.color"
     SIZES = "div.swatch-attribute.size .swatch-option.text"
     UPDATED = "a.action.towishlist.updated"
+
+class ComparisonListLocators:
+    WHATS_NEW_PAGE_URL = "https://magento.softwaretestingboard.com/what-is-new.html"
+    COMPARISON_LIST_URL = "https://magento.softwaretestingboard.com/catalog/product_compare/"
+    
+    ADD_TO_COMPARE_LIST = "a[class='action tocompare']"
+    COMPARISON_LIST_SUCCESS_MSG = "div[class='page messages']"
+    ITEM_CARDS = "//div[@class='product-item-info']"
+    REMOVE_ITEM = "//*[@id='product-comparison']//a[class='action delete'])[1]"
+    ITEM_NAME = "(/*[@id='product-comparison']//[@class='product-item-name'])[1]"
+    EMPTY_MESSAGE = "//div[@class='message info empty']"
