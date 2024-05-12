@@ -41,3 +41,16 @@ class MenSalePage:
     def is_number_of_items_in_toolbar_corresponds_to_amount_in_list(self):
         number = self.get_number_of_items_in_te_list()
         return s(ms_locators.TOOLBAR_NUMBER).should(have.text(number))
+
+    def are_only_product_cards_for_men_present(self):
+        cards = self.get_product_cards()
+        for card in cards:
+            card.should(have.attribute("src").value_containing("/m/"))
+
+    @staticmethod
+    def get_product_cards():
+        return ss(ms_locators.PRODUCT_IMAGE)
+
+    @staticmethod
+    def is_product_list_present():
+        return s(ms_locators.PRODUCT_LIST).should(be.present)

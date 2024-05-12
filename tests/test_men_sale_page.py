@@ -31,3 +31,12 @@ def test_verify_total_number_of_items():
     page = MenSalePage(browser)
     page.open_page()
     page.is_number_of_items_in_toolbar_corresponds_to_amount_in_list()
+
+
+@allure.link("https://trello.com/c/PDdDAwh1")
+@allure.title("Verify only cards with products for men are present on the page")
+def test_verify_only_cards_with_men_products_are_present():
+    page = MenSalePage(browser)
+    page.open_page()
+    page.is_product_list_present()
+    page.are_only_product_cards_for_men_present()

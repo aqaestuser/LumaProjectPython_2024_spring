@@ -255,6 +255,8 @@ class MenSaleLocators:
     PAGE_TITLE = "[data-ui-id='page-title-wrapper']"
     LIST_ITEM = "li.product-item"
     TOOLBAR_NUMBER = "#toolbar-amount>span"
+    PRODUCT_IMAGE = "img.product-image-photo"
+    PRODUCT_LIST = "ol.product-items"
 
 
 class SetYogaStrapsLocators:
