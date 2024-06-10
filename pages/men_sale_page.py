@@ -1,4 +1,4 @@
-from selene import browser
+from selene import Collection, browser
 from selene.support.conditions import be, have
 from selene.support.shared.jquery_style import s, ss
 from selenium.common import StaleElementReferenceException
@@ -21,6 +21,15 @@ price_sort_option = s("option[value='price']")
 sorter = s("#sorter")
 product_titles = "a.product-item-link"
 product_prices = "span>span.price"
+product_price = "span>span.price"
+as_low_as_title = ".price-label"
+product_title = ".product-item-link"
+product_cards = ss(".product-item-info")
+product_image = "img.product-image-photo"
+product_size_list = "//div[@aria-label = 'Size']"
+product_size = "div > div.swatch-option.text"
+product_color_list = "//div[@aria-label = 'Color']"
+product_color = "div > div.swatch-option.color"
 men_sale_page_url = 'https://magento.softwaretestingboard.com/promotions/men-sale.html'
 breadcrumbs_path = ['Home', 'Sale', 'Men Sale']
 page_title = "Men Sale"
@@ -152,3 +161,43 @@ def products_arrangement_should_be_sorted_by_name():
     names_list = [name for name in names_list if name]
     sorted_list = sorted(names_list)
     assert names_list == sorted_list, f"Name list is not sorted, actual list: {names_list}"
+
+
+def product_cards_should_have_correct_content():
+    product_cards_should_have_title(product_cards)
+    product_cards_should_have_price(product_cards)
+    product_cards_should_have_image(product_cards)
+    product_cards_should_have_available_sizes_list(product_cards)
+    product_cards_should_have_available_colors_list(product_cards)
+
+
+def product_cards_should_have_title(cards: Collection):
+    for card in cards:
+        title = card.element(product_title)
+        title.should(be.present)
+        assert title.locate().text != ''
+
+
+def product_cards_should_have_price(cards: Collection):
+    for card in cards:
+        price = card.element(product_price)
+        price.should(be.present)
+        card.element(as_low_as_title).should(be.present)
+        assert price.locate().text != ''
+
+
+def product_cards_should_have_image(cards: Collection):
+    for card in cards:
+        card.element(product_image).should(be.present)
+
+
+def product_cards_should_have_available_sizes_list(cards: Collection):
+    for card in cards:
+        card.element(product_size_list).should(be.present)
+        assert len(card.all(product_size)) > 0
+
+
+def product_cards_should_have_available_colors_list(cards: Collection):
+    for card in cards:
+        card.element(product_color_list).should(be.present)
+        assert len(card.all(product_color)) > 0

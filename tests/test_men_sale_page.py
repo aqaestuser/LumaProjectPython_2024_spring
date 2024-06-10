@@ -1,3 +1,5 @@
+import time
+
 import allure
 import pytest
 from pages import men_sale_page
@@ -87,3 +89,12 @@ def test_verify_sorting_product_cards_by_name():
     page.selected_sorting_option_should_be("Position")
     page.switch_to_sorting_option("Product Name")
     page.product_arrangement_should_correspond_to_sort_option("Product Name")
+
+
+@allure.link("https://trello.com/c/f30xVqo3")
+@allure.title("Verify the contents of each product's card")
+def test_verify_contents_of_each_product_card():
+    page = men_sale_page
+    page.open()
+    page.product_list_should_be_present()
+    page.product_cards_should_have_correct_content()
