@@ -1,4 +1,4 @@
-from selene import browser, have, be, command, by, query
+from selene import browser, have, be, command, query
 from selene.support.shared.jquery_style import s, ss
 from selenium.webdriver.support.color import Color
 
