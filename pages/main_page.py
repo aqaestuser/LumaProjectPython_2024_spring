@@ -21,6 +21,7 @@ item_size = s('[option-label="XS"]')
 color_item = s('[option-label="Orange"]')
 btn_add_to_cart = s('form[data-product-sku="WS12"] button')
 privacy_cookie_policy_link = s("//a[contains(@href, 'privacy-policy-cookie')]")
+sign_in_link = s('(//li[@class="authorization-link"])[1]')
 
 
 class MainPage:
@@ -220,3 +221,11 @@ def click_privacy_cookie_policy_link():
 def should_be_redirected_to(text):
     privacy_policy_page.is_current_url()
     privacy_policy_page.is_header_has_text(text)
+
+
+def click_on_create_account_link():
+    s(create_an_account).should(be.visible).click()
+
+
+def click_on_sign_in_link():
+    sign_in_link.should(be.visible).click()
