@@ -1,4 +1,4 @@
-from selene import browser, have
+from selene import browser, have, be
 from selene.support.shared.jquery_style import s
 
 from pages.locators import CreateAccountLocators
@@ -18,6 +18,7 @@ password_strength_meter = s("#password-strength-meter")
 password_strength_meter_label = s("#password-strength-meter-label")
 password_confirmation_error = s("#password-confirmation-error")
 page_title = s("h1.page-title")
+create_button = s('//button[@title="Create an Account"]')
 
 
 def visit():
@@ -70,3 +71,12 @@ def should_have_page_title(text):
 
 def should_be_create_account_url():
     browser.should(have.url(url))
+
+
+def registration_form_should_be_present():
+    firstname_input.should(be.visible)
+    lastname_input.should(be.visible)
+    email_address_input.should(be.visible)
+    password_input.should(be.visible)
+    password_confirmation_input.should(be.visible)
+    create_button.should(be.clickable)
